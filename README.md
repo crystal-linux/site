@@ -1,2 +1,2 @@
-# (web)site
+# Site
 Website for the project (WIP)
