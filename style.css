@@ -1,19 +1,121 @@
-.text {
-    height: 15em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: monospace;
-    color: #d0cfcc;
-    font-size: 48;
-}
-
-.text p {
-    margin: 0;
+html,
+body {
+    height: 100%;
+    font-family: "IBM Plex Mono", "JetBrains Mono", "Fira Mono", Consolas, Inconsolata, monospace;
 }
 
 body {
-    background-color: #242424
-} 
-    background-color: #000000
+    margin: 0;
+    background: linear-gradient(to top, #111111, #424242);
+}
+
+#nav {
+    display: flex;
+    box-shadow: 0px 2px 5px #000;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: #212121;
+    border-radius: 0 0 10px 10px;
+    color: #a901fe;
+}
+
+#nav h2 {
+    margin: 0;
+    font-weight: normal;
+}
+
+.navlinks {
+    vertical-align: middle;
+    line-height: 1.5;
+}
+
+.navlinks a {
+    color: #e2e2e2;
+    font-size: 20px;
+    text-decoration: none!important;
+    margin-right: 1em;
+}
+
+.navlinks a:hover {
+    color: #a901fe;
+}
+
+#content {
+    margin: 1.5em 1.0em;
+    color: #fff;
+}
+
+.pageheader {
+    margin-bottom: 0.25em;
+    animation: fadeIn ease 1s both;
+    padding: 1.25em 0em;
+    font-size: 32px;
+}
+
+.pageheader a {
+    display: inline-block;
+    padding: 0.5em;
+    color: #212121;
+    background-color: #a901fe;
+    border-radius: 15px;
+}
+
+.pageheader a:hover {
+    background-color: rgb(192, 192, 192);
+    color: #111;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        margin-left: 0;
+    }
+    100% {
+        opacity: 1;
+        margin-left: 0.75em;
+    }
+}
+
+.subcontent {
+    margin-left: 2.5em;
+    animation: fadeInSubcontent ease 1s 1s both;
+}
+
+.email {
+    color: #a901fe;
+}
+
+.datestamp {
+    color: #a901fe;
+}
+
+@keyframes fadeInSubcontent {
+    0% {
+        opacity: 0;
+        margin-left: 0;
+    }
+    100% {
+        opacity: 1;
+        margin-left: 2.5em;
+    }
+}
+
+.subcontentheader {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-size: 24px;
+}
+
+.subcontent ul {
+    list-style: none;
+    font-size: 18px;
+}
+
+.subcontent a {
+    color: #a901fe;
+    text-decoration: none!important;
+}
+
+.subcontent a:hover {
+    color: rgb(192, 192, 192);
 }
