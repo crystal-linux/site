@@ -4,11 +4,16 @@
         <title>Crystal weekly newsletter</title>
         <description>Weekly newsletter from the crystal linux project</description>
         <link>https://getcryst.al/news.html</link>
-		<item>
-			<title>Governance, AME, and Website</title>
-			<link>https://getcryst.al/news/9-5-21.html</link>
-			<description>This project has recieved quite a bit of formalization today. Jnats has taken the role as the project lead, to resolve ties in votes among contributers or communicate with other companies/foundations. Ame (or amethyst) our in-house packaging tool, has recently been redone in rust and is now feature-complete with the python version. There will also be a meetingbetween the main members on Sunday at 1pm EST every week in our discord server. The newsletter willcome out shortly after the meeting.
-			</description>
-		</item>
-	</channel>
+        <item>
+            	<title>Progress, Plans and Plenty of work ahead</title>
+            	<link>https://getcryst.al/news/9-12-21.html</link>
+            	<description>All packages in the crystal (no longer CrystalUX!) repos will from now on be signed using PGP keys, this will require the crystal-keyring package to be installed. The Testingbranch will also return, as well as a new Developer branch, which will be even more bleeding edge and might be more broken. Ame will soon also be getting an audit for the codebase, to provide a smootjer experience. Citrine now has a final plan we will be following, it will be getting LVM on LUKS support by next week. Citrine will also be moving to a TUI interface, instead of CLI. Our getting started app "Opal" is now also in the plannings and will soon be picked up in development. Read more on the actual newsletter</description>
+        </item>
+	<item>
+		<title>Governance, AME, and Website</title>
+		<link>https://getcryst.al/news/9-5-21.html</link>
+		<description>This project has recieved quite a bit of formalization today. Jnats has taken the role as the project lead, to resolve ties in votes among contributers or communicate with other companies/foundations. Ame (or amethyst) our in-house packaging tool, has recently been redone in rust and is now feature-complete with the python version. There will also be a meetingbetween the main members on Sunday at 1pm EST every week in our discord server. The newsletter willcome out shortly after the meeting.
+		</description>
+	</item>
+     </channel>
 </rss>
