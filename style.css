@@ -6,7 +6,7 @@ body {
 
 body {
     margin: 0;
-    background: linear-gradient(to top, #111111, #424242);
+    background: linear-gradient(to top, #111111, #424242) fixed;
 }
 
 #nav {
