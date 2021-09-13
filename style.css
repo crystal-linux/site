@@ -19,6 +19,11 @@ body {
     color: #a901fe;
 }
 
+#main {
+    color: #a901fe;
+    text-decoration: none;
+}
+
 #nav h2 {
     margin: 0;
     font-weight: normal;
