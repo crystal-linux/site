@@ -15,36 +15,76 @@
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="msapplication-config" content="/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
+<script>
+    function isElementInViewport(elem) {
+        var top_of_element = $(elem).offset().top;
+        var bottom_of_element = $(elem).offset().top + $(elem).outerHeight();
+        var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+        var top_of_screen = $(window).scrollTop();
+        return ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element));
+    }
+    function checkAnimation() {
+        var $elem = $('.bottom-content');
 
+        // If the animation has already been started
+        if (isElementInViewport($elem)) {
+            // Start the animation
+            $elem.addClass('start-anim');
+        } else {
+            $elem.removeClass('start-anim');
+        }
+    }
+    // Capture scroll events
+    $(window).scroll(function(){
+        checkAnimation();
+    });
+</script>
 <body>
     <div id="nav">
         <h2><a id="main" href="https://getcryst.al">Crystal Linux</a></h2>
         <div class="navlinks">
             <a href="#">Home</a>
-            <a href="https://getcryst.al/iso/crystal-latest.iso">Download ISO</a>
             <a href="news.html">Weekly Newsletter</a>
             <a href="security.html">Security Notices</a>
         </div>
     </div>
     <div id="content">
-        <div class="subcontent">
-            <h3 class="subcontentheader">
-                An Archlinux Based Distribution
+        <div class="main-content" style="animation-delay: 1.2s; -webkit-animation-delay: 1.2s; -moz-animation-delay: 1.2s">
+            <h3 class="centered-header" style="animation: topFadeIn 0.5s ease both;">
+                An Arch Based Distribution
             </h3>
             <ul>
-                <li>Easy to use, powerful, and customizable.</li>
-            </ul>
-            <h3 class="subcontentheader">
-                Socials
-            </h3>
-            <ul>
-                <li>Our projects are on <a href="https://git.getcryst.al/crystal">our gitea</a></li>
-                <li>You can also find us on <a href="https://twitter.com/crystal_linux">Twitter</a></li>
-                <li>You should come join our <a href="https://discord.gg/DnhehBgMRJ">Discord Server</a></li>
+                <li class="list-item-1">- Easy to use -</li>
+                <li class="list-item-2">- Powerful -</li>
+                <li class="list-item-3">- Customizable -</li>
             </ul>
         </div>
+        <div id="download-section">
+            <h3 class="centered-header header-shadow" style="animation: fadeIn 0.5s 1.4s ease both;">Get Latest ISO</h3>
+            <a class="clear-button" href="https://getcryst.al/iso/crystal-latest.iso" style="margin-bottom: 0.667em;">
+                Download
+            </a>
+        </div>
+        <div class="bottom-content">
+            <h3 class="centered-header" style="margin-bottom: 0.3em;">
+                Socials
+            </h3>
+            <div class="dropdown">
+                <p class="dropdown-hover socials-button">V</p>
+                <div class="dropdown-content socials-dropdown">
+                        <a href="https://git.getcryst.al/crystal">Gitea</a>
+                        <a href="https://twitter.com/crystal_linux">Twitter</a>
+                        <a href="https://discord.gg/DnhehBgMRJ">Discord</a>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
     </div>
+    <div class="copyright">Copyright (c) 2022 Tha Boys. All Rights Reserved.</div>
 </body>
 
 </html>
+
