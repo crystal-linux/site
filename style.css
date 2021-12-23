@@ -390,7 +390,7 @@ body {
 .socials-button{
     display: inline-block;
     color: #fff;
-    background-color: #0084FF;
+    background-color: #A900FF;
     padding: 0.4em 6em;
     margin-block-start: 0;
     margin-block-end: 0;
@@ -410,7 +410,7 @@ body {
 .dropdown-content {
     animation: fadeOut 0.2s ease forwards;
     /*position: absolute;*/
-    background-color: #0084FF;
+    background-color: #A900FF;
     min-width: 120px;
     box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
     text-shadow: 1.5px 1.5px 1px #212121cc;
@@ -432,19 +432,19 @@ body {
 
 @keyframes socialsHover {
     0% {
-        background-color: #0084FF;
+        background-color: #A900FF;
     }
     100% {
-        background-color: #A900FF;
+        background-color: #2B2B2B;
     }
 }
 
 @keyframes socialsHover_rev {
     0% {
-        background-color: #A900FF;
+        background-color: #2B2B2B;
     }
     100% {
-        background-color: #0084FF;
+        background-color: #A900FF;
     }
 }
 
