@@ -365,13 +365,13 @@ body {
         padding: 0.4em 6em;
     }
     100% {
-        padding: 0.4em 10em;
+        padding: 0.4em 14em;
     }
 }
 
 @keyframes menuHover_rev {
     0% {
-        padding: 0.4em 10em;
+        padding: 0.4em 14em;
     }
     100% {
         padding: 0.4em 6em;
