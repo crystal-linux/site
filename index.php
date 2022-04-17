@@ -161,7 +161,7 @@
                 <div class="card-body">
                     <h4 class="card-title" style="margin-bottom: 2px;color: rgba(238,238,238,0.6);">We 💖 open source software</h4>
                     <p class="card-text" style="color: rgb(142,143,143);">Basically everything that Crystal Linux has coded/made is completely open source for anyone to see. Why not contribute to the project?</p>
-                    <a class="btn btn-primary text-capitalize" role="button" href="#" style="font-family: Inter, sans-serif;border-radius: 6px;font-weight: 500;font-size: 15px;background: #a165bf;filter: drop-shadow(0px 10px 30px rgba(161, 101, 191, 0.2));border:none;outline:none" onclick="window.open(&quot;https://repo.getcryst.al/crystal-latest.iso&quot;);">Contribute on Gitlab</a>
+                    <a class="btn btn-primary text-capitalize" role="button" href="#" style="font-family: Inter, sans-serif;border-radius: 6px;font-weight: 500;font-size: 15px;background: #a165bf;filter: drop-shadow(0px 10px 30px rgba(161, 101, 191, 0.2));border:none;outline:none" onclick="window.open(&quot;https://git.tar.black/crystal/&quot;);">Contribute on Gitlab</a>
                 </div>
             </div>
             <footer class="text-center">
