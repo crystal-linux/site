@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+    function get_gravatar( $email, $s = 80, $d = 'mp', $r = 'g', $img = false, $atts = array() ) {
+        $url = 'https://www.gravatar.com/avatar/';
+        $url .= md5( strtolower( trim( $email ) ) );
+        $url .= "?s=$s&d=$d&r=$r";
+        if ( $img ) {
+            $url = '<img src="' . $url . '"';
+            foreach ( $atts as $key => $val )
+                $url .= ' ' . $key . '="' . $val . '"';
+            $url .= ' />';
+        }
+        return $url;
+    }
+    $ame_json = file_get_contents("https://git.tar.black/api/v4/projects/43/repository/contributors?sort_by=commits&sort=desc");
+    $jade_json = file_get_contents("https://git.tar.black/api/v4/projects/51/repository/contributors?sort_by=commits&sort=desc");
+    $mal_json = file_get_contents("https://git.tar.black/api/v4/projects/52/repository/contributors?sort_by=commits&sort=desc");
+    $branding_json = file_get_contents("https://git.tar.black/api/v4/projects/44/repository/contributors?sort_by=commits&sort=desc");
+    $ame_obj = json_decode($ame_json);
+    $jade_obj = json_decode($jade_json);
+    $mal_obj = json_decode($mal_json);
+    $branding_obj = json_decode($branding_json);
+    $x = 0;
+?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -13,7 +35,7 @@
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
     <link rel="manifest" href="assets/favicons/site.webmanifest">
@@ -46,7 +68,6 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="og:title" content="media">
     <meta name="og:description" content="media">
-    <!-- discord embed end-->
 </head>
 
 <body style="font-family: Inter, sans-serif;background: #1c1c1c;color: #eee;">
@@ -66,7 +87,10 @@
                 <h2 class="text-center" style="color: #c3c3c3;margin-bottom: 10px;">An Arch Based Distribution<br></h2>
                 <p class="text-center" style="margin-bottom: 0px;">Crystal Linux is a brand new Arch Linux based distribution. Completely beginner friendly, easy to use, and powerful.</p>
             </div>
-            <div class="buttons" style="margin-top: -5px;"><a class="btn btn-primary text-capitalize" role="button" href="#" style="font-family: Inter, sans-serif;border-radius: 6px;font-weight: 500;font-size: 15px;background: #a165bf;filter: drop-shadow(0px 10px 30px rgba(161, 101, 191, 0.2));" onclick="window.open(&quot;https://repo.getcryst.al/crystal-latest.iso&quot;);">Download</a><button class="btn btn-light text-capitalize" type="button" style="border-radius: 6px;font-size: 15px;font-weight: 500;font-family: Inter, sans-serif;letter-spacing: 0.2px;filter: drop-shadow(0px 10px 30px rgba(221, 221, 221, 0.2));" onclick="window.open(&quot;https://git.tar.black/crystal&quot;);">Gitlab</button></div>
+            <div class="buttons" style="margin-top: -5px;">
+                <a class="btn btn-primary text-capitalize" role="button" href="#" style="font-family: Inter, sans-serif;border-radius: 6px;font-weight: 500;font-size: 15px;background: #a165bf;filter: drop-shadow(0px 10px 30px rgba(161, 101, 191, 0.2));" onclick="window.open(&quot;https://repo.getcryst.al/crystal-latest.iso&quot;);">Download</a>
+                <button class="btn btn-light text-capitalize" type="button" style="border-radius: 6px;font-size: 15px;font-weight: 500;font-family: Inter, sans-serif;letter-spacing: 0.2px;filter: drop-shadow(0px 10px 30px rgba(221, 221, 221, 0.2));" onclick="window.open(&quot;https://git.tar.black/crystal&quot;);">Gitlab</button>
+                </div>
             <div class="card-group" style="margin-top: 100px;filter: drop-shadow(0px 10px 30px rgba(45, 45, 46, 0.2));">
                 <div class="card mobile-compat-card" style="border-radius: 6px;background: #202021;margin-right: 5px;">
                     <div class="card-body">
@@ -86,17 +110,58 @@
                 <div class="card mobile-compat-card" style="border-radius: 6px;background: #202021;margin-left: 5px;">
                     <div class="card-body">
                         <h4 class="card-title" style="margin-bottom: 2px;color: rgba(238,238,238,0.6);">Contributors</h4>
-                        <p class="card-text" style="color: rgb(142,143,143);">Top five contributors on crystal/ame, jade, and malachite sorted by commits.</p>
+                        <p class="card-text" style="color: rgb(142,143,143);">Top five contributors on crystal/ame, jade, branding, and malachite sorted by top commits.</p>
                         <div id="ame" style="margin-bottom: 10px;float:left;margin-right:10px">
-                            <p style="margin-bottom: 5px;font-size: 14px;">crystal/ame&nbsp;contributors<br></p><img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" src="https://identicon-api.herokuapp.com/arch/32?format=png"><img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" src="https://identicon-api.herokuapp.com/example/32?format=png"><img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" src="https://identicon-api.herokuapp.com/image/32?format=png"><img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" src="https://identicon-api.herokuapp.com/thistakesalongtime/32?format=png"><img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" src="https://identicon-api.herokuapp.com/ex1/32?format=png">
+                            <p style="margin-bottom: 5px;font-size: 14px;">crystal/ame&nbsp;contributors<br></p>
+                            <?php
+                                while($x != 5){
+                                    echo('<img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" alt="'. $ame_obj[$x]->email. "" .'" src="'. get_gravatar($ame_obj[$x]->email, 30, "identicon", "r", false) .'">');
+                                    $x++;
+                                }
+                            ?>
                         </div>
                         <div id="jade" style="margin-bottom: 10px;">
-                            <p style="margin-bottom: 5px;font-size: 14px;">crystal/jade contributors<br></p><img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" src="https://identicon-api.herokuapp.com/ex2/32?format=png"><img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" src="https://identicon-api.herokuapp.com/ex3/32?format=png"><img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" src="https://identicon-api.herokuapp.com/ex6/32?format=png"><img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" src="https://identicon-api.herokuapp.com/linux/32?format=png"><img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" src="https://identicon-api.herokuapp.com/freebsd/32?format=png">
+                            <p style="margin-bottom: 5px;font-size: 14px;">crystal/jade contributors<br></p>
+                            <?php
+                                $x = 0;
+                                while($x != 5){
+                                    echo('<img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" alt="'. $jade_obj[$x]->email. "" .'" src="'. get_gravatar($jade_obj[$x]->email, 30, "identicon", "r", false) .'">');
+                                    $x++;
+                                }
+                            ?>
                         </div>
-                        <div id="mal">
-                            <p style="margin-bottom: 5px;font-size: 14px;">crystal/malachite&nbsp;contributors<br></p><img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" src="https://identicon-api.herokuapp.com/templeos/32?format=png"><img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" src="https://identicon-api.herokuapp.com/c/32?format=png"><img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" src="https://identicon-api.herokuapp.com/cpp/32?format=png"><img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" src="https://identicon-api.herokuapp.com/csharp/32?format=png"><img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" src="https://identicon-api.herokuapp.com/java/32?format=png">
+                        <div id="mal" style="float:left;margin-right:10px">
+                            <p style="margin-bottom: 5px;font-size: 14px;">crystal/malachite&nbsp;contributors<br></p>
+                            <?php
+                                $x = 0;
+                                while($x != 5){
+                                    echo('<img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" alt="'. $mal_obj[$x]->email. "" .'" src="'. get_gravatar($mal_obj[$x]->email, 30, "identicon", "r", false) .'">');
+                                    $x++;
+                                }
+                            ?>
+                        </div>
+                        <div id="jade" style="margin-bottom: 10px;">
+                            <p style="margin-bottom: 5px;font-size: 14px;">crystal/branding contributors<br></p>
+                            <!--These two are hard coded as these are the main contributors/people who made the branding-->
+                            <img style="border-radius: 6px;margin-right: 5px;" width="32" height="32" alt="Merlă Octavian" src="https://git.tar.black/uploads/-/system/user/avatar/15/avatar.png?width=400">
+                            <img style="border-radius: 6px;margin-right: 5px;" width="32" height="32" alt="54361578+jaasio@users.noreply.github.com" src="https://secure.gravatar.com/avatar/f0da7fe8afd2d394012e36dbc55059d4?s=800&d=identicon">
+                            <img style="border-radius: 6px;margin-right: 5px;" width="32" height="32" alt="lausen@tar.black" src="https://git.tar.black/uploads/-/system/user/avatar/12/avatar.png?width=400">
+                            <?php
+                                $x = 0;
+                                while($x != 2){
+                                    echo('<img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" alt="'. $branding_obj[$x]->email. "" .'" src="'. get_gravatar($branding_obj[$x]->email, 30, "identicon", "r", false) .'">');
+                                    $x++;
+                                }
+                            ?>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="card mobile-compat-card" style="border-radius: 6px;background: #202021;margin-top:20px;margin-bottom:20px">
+                <div class="card-body">
+                    <h4 class="card-title" style="margin-bottom: 2px;color: rgba(238,238,238,0.6);">We 💖 open source software</h4>
+                    <p class="card-text" style="color: rgb(142,143,143);">Basically everything that Crystal Linux has coded/made is completely open source for anyone to see. Why not contribute to the project?</p>
+                    <a class="btn btn-primary text-capitalize" role="button" href="#" style="font-family: Inter, sans-serif;border-radius: 6px;font-weight: 500;font-size: 15px;background: #a165bf;filter: drop-shadow(0px 10px 30px rgba(161, 101, 191, 0.2));border:none;outline:none" onclick="window.open(&quot;https://repo.getcryst.al/crystal-latest.iso&quot;);">Contribute on Gitlab</a>
                 </div>
             </div>
             <footer class="text-center">
@@ -106,5 +171,4 @@
     </section>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
-
 </html>
