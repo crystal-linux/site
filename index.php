@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    function get_gravatar( $email, $s = 80, $d = 'mp', $r = 'g', $img = false, $atts = array() ) {
-        $url = 'https://www.gravatar.com/avatar/';
-        $url .= md5( strtolower( trim( $email ) ) );
-        $url .= "?s=$s&d=$d&r=$r";
-        if ( $img ) {
-            $url = '<img src="' . $url . '"';
-            foreach ( $atts as $key => $val )
-                $url .= ' ' . $key . '="' . $val . '"';
-            $url .= ' />';
-        }
-        return $url;
-    }
-    $ame_json = file_get_contents("https://git.tar.black/api/v4/projects/43/repository/contributors?sort_by=commits&sort=desc");
-    $jade_json = file_get_contents("https://git.tar.black/api/v4/projects/51/repository/contributors?sort_by=commits&sort=desc");
-    $mal_json = file_get_contents("https://git.tar.black/api/v4/projects/52/repository/contributors?sort_by=commits&sort=desc");
-    $branding_json = file_get_contents("https://git.tar.black/api/v4/projects/44/repository/contributors?sort_by=commits&sort=desc");
+
+    $options = array(
+        'http' => array(
+            'method' => 'GET',
+            'header'=> 'User-Agent: getcryst.al'
+        )
+    );
+    $context = stream_context_create($options);
+    $ame_json = file_get_contents("https://api.github.com/repos/crystal-linux/amethyst/contributors", false, $context);
+    $jade_json = file_get_contents("https://api.github.com/repos/crystal-linux/jade/contributors", false, $context);
+    $mal_json = file_get_contents("https://api.github.com/repos/crystal-linux/malachite/contributors", false, $context);
+    $branding_json = file_get_contents("https://api.github.com/repos/crystal-linux/branding/contributors", false, $context);
     $ame_obj = json_decode($ame_json);
     $jade_obj = json_decode($jade_json);
     $mal_obj = json_decode($mal_json);
@@ -35,7 +31,7 @@
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-      <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
     <link rel="manifest" href="assets/favicons/site.webmanifest">
@@ -44,16 +40,11 @@
     <meta name="application-name" content="Crystal Linux">
     <meta name="msapplication-TileColor" content="#603cba">
     <meta name="theme-color" content="#ffffff">
-    <!-- discord embed -->
-    <!-- COMMON TAGS -->
     <meta charset="utf-8">
     <title>Crystal Linux</title>
-    <!-- Search Engine -->
     <meta name="description" content="Crystal Linux is a brand new Arch Linux based distribution. Completely beginner friendly, easy to use, and powerful.">
-    <!-- Schema.org for Google -->
     <meta itemprop="name" content="Crystal - Official Site">
     <meta itemprop="description" content="Crystal Linux is a brand new Arch Linux based distribution. Completely beginner friendly, easy to use, and powerful.">
-    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
     <meta name="og:title" content="Crystal - Official Site">
     <meta name="og:description" content="Crystal Linux is a brand new Arch Linux based distribution. Completely beginner friendly, easy to use, and powerful.">
     <meta name="og:url" content="https://getcryst.al">
@@ -61,10 +52,10 @@
     <meta name="og:type" content="website">
     <meta content="#a900ff" data-react-helmet="true" name="theme-color" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta id="image-src" name="twitter:image:src" content="https://git.tar.black/crystal/branding/-/raw/main/banners/sitebanner.png">
-    <meta id="discord" name="twitter:image" content="https://git.tar.black/crystal/branding/-/raw/main/banners/sitebanner.png">    
-    <meta id="embed-image" property="og:image" content="https://git.tar.black/crystal/branding/-/raw/main/banners/sitebanner.png">
-    <meta property="og:url" content="https://git.tar.black/crystal/branding/-/raw/main/banners/sitebanner.png">
+    <meta id="image-src" name="twitter:image:src" content="https://raw.githubusercontent.com/crystal-linux/branding/main/banners/sitebanner.png">
+    <meta id="discord" name="twitter:image" content="https://raw.githubusercontent.com/crystal-linux/branding/main/banners/sitebanner.png">
+    <meta id="embed-image" property="og:image" content="https://raw.githubusercontent.com/crystal-linux/branding/main/banners/sitebanner.png">
+    <meta property="og:url" content="https://raw.githubusercontent.com/crystal-linux/branding/main/banners/sitebanner.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="og:title" content="media">
     <meta name="og:description" content="media">
@@ -115,7 +106,11 @@
                             <p style="margin-bottom: 5px;font-size: 14px;">crystal/ame&nbsp;contributors<br></p>
                             <?php
                                 while($x != 5){
-                                    echo('<img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" alt="'. $ame_obj[$x]->email. "" .'" src="'. get_gravatar($ame_obj[$x]->email, 30, "identicon", "r", false) .'">');
+                                    if($ame_obj[$x]->login == null){
+                                        echo('<img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" alt="Contribute to be here!" src="https://identicon-api.herokuapp.com/kdgh6fdYqW/32?format=png">');
+                                    }else{
+                                        echo('<img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" alt="'. $ame_obj[$x]->login .'" src="'. $ame_obj[$x]->avatar_url .'">');
+                                    }
                                     $x++;
                                 }
                             ?>
@@ -125,7 +120,11 @@
                             <?php
                                 $x = 0;
                                 while($x != 5){
-                                    echo('<img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" alt="'. $jade_obj[$x]->email. "" .'" src="'. get_gravatar($jade_obj[$x]->email, 30, "identicon", "r", false) .'">');
+                                    if($jade_obj[$x]->login == null){
+                                        echo('<img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" alt="Contribute to be here!" src="https://identicon-api.herokuapp.com/kdgh6fdYqW/32?format=png">');
+                                    }else{
+                                        echo('<img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" alt="'. $jade_obj[$x]->login .'" src="'.$jade_obj[$x]->avatar_url .'">');
+                                    }
                                     $x++;
                                 }
                             ?>
@@ -135,21 +134,28 @@
                             <?php
                                 $x = 0;
                                 while($x != 5){
-                                    echo('<img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" alt="'. $mal_obj[$x]->email. "" .'" src="'. get_gravatar($mal_obj[$x]->email, 30, "identicon", "r", false) .'">');
+                                    if($mal_obj[$x]->login == null){
+                                       echo('<img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" alt="Contribute to be here!" src="https://identicon-api.herokuapp.com/floppa/32?format=png">');
+                                    }else{
+                                        echo('<img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" alt="'. $mal_obj[$x]->login .'" src="'. $mal_obj[$x]->avatar_url .'">');
+                                    }
                                     $x++;
                                 }
                             ?>
                         </div>
                         <div id="jade" style="margin-bottom: 10px;">
                             <p style="margin-bottom: 5px;font-size: 14px;">crystal/branding contributors<br></p>
-                            <!--These two are hard coded as these are the main contributors/people who made the branding-->
                             <img style="border-radius: 6px;margin-right: 5px;" width="32" height="32" alt="Merlă Octavian" src="https://git.tar.black/uploads/-/system/user/avatar/15/avatar.png?width=400">
                             <img style="border-radius: 6px;margin-right: 5px;" width="32" height="32" alt="54361578+jaasio@users.noreply.github.com" src="https://secure.gravatar.com/avatar/f0da7fe8afd2d394012e36dbc55059d4?s=800&d=identicon">
                             <img style="border-radius: 6px;margin-right: 5px;" width="32" height="32" alt="lausen@tar.black" src="https://git.tar.black/uploads/-/system/user/avatar/12/avatar.png?width=400">
                             <?php
                                 $x = 0;
                                 while($x != 2){
-                                    echo('<img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" alt="'. $branding_obj[$x]->email. "" .'" src="'. get_gravatar($branding_obj[$x]->email, 30, "identicon", "r", false) .'">');
+                                    if($branding_obj[$x]->login == null){
+                                        echo('<img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" alt="Contribute to be here!" src="https://identicon-api.herokuapp.com/pescado/32?format=png">');
+                                    }else{
+                                        echo('<img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" alt="'. $branding_obj[$x]->login .'" src="'. $branding_obj[$x]->avatar_url .'">');
+                                    }
                                     $x++;
                                 }
                             ?>
