@@ -7,8 +7,12 @@
 <h2 align="center">Site</h2>
 
 <p align="center">
-    <a href="https://discord.gg/yp4xpZeAgW"><img alt="Discord" src="https://img.shields.io/discord/825473796227858482?color=blue&label=Discord&logo=Discord&logoColor=white"?link=https://discord.gg/yp4xpZeAgW&link=https://discord.gg/yp4xpZeAgW> </a>
-    <img src="https://img.shields.io/badge/Maintainer-@astral-brightgreen" alt=The maintainer of this repository" href="https://github.com/ibzann">
+    <a href="https://github.com/crystal-linux/.github/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-GPL--3.0-blue.svg" alt="License">
+    <a href="https://github/crystal-linux/site"><img alt="GitHub isses" src="https://img.shields.io/github/issues-raw/crystal-linux/site"></a>
+    <a href="https://github/crystal-linux/site"><img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr-raw/crystal-linux/site"></a><br>
+    <a href="https://twitter.com/intent/user?screen_name=crystal_linux"><img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/crystal_linux?style=flat?color=blue">
+    <a href="https://discord.gg/hYJgu8K5aA"><img alt="Discord" src="https://img.shields.io/discord/825473796227858482?color=blue&label=Discord&logo=Discord&logoColor=white"> </a>
+   <a href="https://github.com/ibzann"> <img src="https://img.shields.io/badge/Maintainer-@ibzann-brightgreen" alt=The maintainer of this repository" href="https://github.com/ibzann"></a>
 </p>
 
 
