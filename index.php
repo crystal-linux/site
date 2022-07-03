@@ -59,6 +59,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="og:title" content="media">
     <meta name="og:description" content="media">
+    <meta name="keywords" content="easy arch linux, arch linux, crystal linux, crystal arch, arch easy, arch installer" />
 </head>
 
 <body style="font-family: Inter, sans-serif;background: #1c1c1c;color: #eee;">
