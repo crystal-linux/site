@@ -146,12 +146,11 @@
                         </div>
                         <div id="jade" style="margin-bottom: 10px;">
                             <p style="margin-bottom: 5px;font-size: 14px;">crystal-linux/branding contributors<br></p>
-                            <img style="border-radius: 6px;margin-right: 5px;" width="32" height="32" alt="Merlă Octavian" src="https://git.tar.black/uploads/-/system/user/avatar/15/avatar.png?width=400">
                             <img style="border-radius: 6px;margin-right: 5px;" width="32" height="32" alt="54361578+jaasio@users.noreply.github.com" src="https://secure.gravatar.com/avatar/f0da7fe8afd2d394012e36dbc55059d4?s=800&d=identicon">
                             <img style="border-radius: 6px;margin-right: 5px;" width="32" height="32" alt="lausen@tar.black" src="https://git.tar.black/uploads/-/system/user/avatar/12/avatar.png?width=400">
                             <?php
                                 $x = 0;
-                                while($x != 2){
+                                while($x != 3){
                                     if($branding_obj[$x]->login == null){
                                         echo('<img style="border-radius: 6px;margin-right: 10px;" width="32" height="32" alt="Contribute to be here!" src="https://identicon-api.herokuapp.com/pescado/32?format=png">');
                                     }else{
