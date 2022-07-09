@@ -62,14 +62,14 @@
     <meta name="keywords" content="easy arch linux, arch linux, crystal linux, crystal arch, arch easy, arch installer" />
 </head>
 
-<body style="font-family: Inter, sans-serif;background: #1c1c1c;color: #eee;">
+<body style="font-family: Inter, sans-serif;background: #2b2b2b;color: #eee;">
     <nav class="navbar navbar-light navbar-expand-lg navigation-clean-button" style="padding-top: 6px;padding-bottom: 6px;background: transparent;">
         <div class="container"><a class="navbar-brand" href="#" style="color: #eee;"><img src="assets/img/crystal-logo-minimal.png" width="24" height="24" style="vertical-align:middle;">&nbsp;Crystal Linux</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1" style="border-width: 0px;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon" style="filter: invert(100%) sepia(4%) saturate(2469%) hue-rotate(188deg) brightness(110%) contrast(87%);"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link active" href="https://github.com/crystal-linux" target="_blank" style="pointer-events: auto;">GitHub</a></li>
                     <li class="nav-item"><a class="nav-link active" href="https://discord.gg/2b47CAKNAx" target="_blank" style="pointer-events: auto;">Discord</a></li>
-                </ul><span class="navbar-text actions"> <a class="btn btn-light action-button" role="button" href="#" style="border-radius: 6px;background: #a165bf;filter: drop-shadow(0px 5px 5px rgba(161, 101, 191, 0.2));" onclick="window.open(&quot;https://repo.getcryst.al/crystal-latest.iso&quot;);">Download</a></span>
+                </ul><span class="navbar-text actions"> <a class="btn btn-light action-button" role="button" href="#" style="border-radius: 6px;background: #a900ff;" onclick="window.open(&quot;https://repo.getcryst.al/crystal-latest.iso&quot;);">Download</a></span>
             </div>
         </div>
     </nav>
@@ -80,8 +80,8 @@
                 <p class="text-center" style="margin-bottom: 0px;">Crystal Linux is a brand new Arch Linux based distribution. Completely beginner friendly, easy to use, and powerful.</p>
             </div>
             <div class="buttons" style="margin-top: -5px;">
-                <a class="btn btn-primary text-capitalize" role="button" href="#" style="font-family: Inter, sans-serif;border-radius: 6px;font-weight: 500;font-size: 15px;background: #a165bf;filter: drop-shadow(0px 5px 5px rgba(161, 101, 191, 0.2));" onclick="window.open(&quot;https://repo.getcryst.al/crystal-latest.iso&quot;);">Download</a>
-                <button class="btn btn-light text-capitalize" type="button" style="border-radius: 6px;font-size: 15px;font-weight: 500;font-family: Inter, sans-serif;letter-spacing: 0.2px;filter: drop-shadow(0px 5px 5px rgba(221, 221, 221, 0.2));" onclick="window.open(&quot;https://github.com/crystal-linux&quot;);">GitHub</button>
+                <a class="btn btn-primary text-capitalize" role="button" href="#" style="font-family: Inter, sans-serif;border-radius: 6px;font-weight: 500;font-size: 15px;background: #a900ff;" onclick="window.open(&quot;https://repo.getcryst.al/crystal-latest.iso&quot;);">Download</a>
+                <button class="btn btn-light text-capitalize" type="button" style="border-radius: 6px;font-size: 15px;font-weight: 500;font-family: Inter, sans-serif;letter-spacing: 0.2px;" onclick="window.open(&quot;https://github.com/crystal-linux&quot;);">GitHub</button>
                 </div>
             <div class="card-group" style="margin-top: 100px;filter: drop-shadow(0px 0px 10px rgba(45, 45, 46, 0.2));">
                 <div class="card mobile-compat-card" style="border-radius: 6px;background: #202021;margin-right: 5px;">
@@ -168,7 +168,7 @@
                 <div class="card-body">
                     <h4 class="card-title" style="margin-bottom: 2px;color: rgba(238,238,238,0.6);">We 💖 open source software</h4>
                     <p class="card-text" style="color: rgb(142,143,143);">Basically everything that Crystal Linux has coded/made is completely open source for anyone to see. Why not contribute to the project?</p>
-                    <a class="btn btn-primary text-capitalize" role="button" href="#" style="font-family: Inter, sans-serif;border-radius: 6px;font-weight: 500;font-size: 15px;background: #a165bf;filter: drop-shadow(0px 5px 5px rgba(161, 101, 191, 0.2));border:none;outline:none" onclick="window.open(&quot;https://github.com/crystal-linux/&quot;);">Contribute on GitHub</a>
+                    <a class="btn btn-primary text-capitalize" role="button" href="#" style="font-family: Inter, sans-serif;border-radius: 6px;font-weight: 500;font-size: 15px;background: #a900ff; border:none;outline:none" onclick="window.open(&quot;https://github.com/crystal-linux/&quot;);">Contribute on GitHub</a>
                 </div>
             </div>
             <footer class="text-center">
