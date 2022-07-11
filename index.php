@@ -69,7 +69,7 @@
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link active" href="https://github.com/crystal-linux" target="_blank" style="pointer-events: auto;">GitHub</a></li>
                     <li class="nav-item"><a class="nav-link active" href="https://discord.gg/2b47CAKNAx" target="_blank" style="pointer-events: auto;">Discord</a></li>
-                </ul><span class="navbar-text actions"> <a class="btn btn-light action-button" role="button" href="#" style="border-radius: 6px;background: #a900ff;" onclick="window.open(&quot;https://repo.getcryst.al/crystal-latest.iso&quot;);">Download</a></span>
+                </ul><span class="navbar-text actions"> <a class="btn btn-light action-button" role="button" href="#" style="border-radius: 6px;background: #a900ff;" onclick="window.open(&quot;https://github.com/crystal-linux/iso/releases/download/07-09-22-17-50/crystal-live-07-09-22-17-43-x86_64.iso&quot;);">Download</a></span>
             </div>
         </div>
     </nav>
@@ -80,7 +80,7 @@
                 <p class="text-center" style="margin-bottom: 0px;">Crystal Linux is a brand new Arch Linux based distribution. Completely beginner friendly, easy to use, and powerful.</p>
             </div>
             <div class="buttons" style="margin-top: -5px;">
-                <a class="btn btn-primary text-capitalize" role="button" href="#" style="font-family: Inter, sans-serif;border-radius: 6px;font-weight: 500;font-size: 15px;background: #a900ff;" onclick="window.open(&quot;https://repo.getcryst.al/crystal-latest.iso&quot;);">Download</a>
+                <a class="btn btn-primary text-capitalize" role="button" href="#" style="font-family: Inter, sans-serif;border-radius: 6px;font-weight: 500;font-size: 15px;background: #a900ff;" onclick="window.open(&quot;https://github.com/crystal-linux/iso/releases/download/07-09-22-17-50/crystal-live-07-09-22-17-43-x86_64.iso&quot;);">Download</a>
                 <button class="btn btn-light text-capitalize" type="button" style="border-radius: 6px;font-size: 15px;font-weight: 500;font-family: Inter, sans-serif;letter-spacing: 0.2px;" onclick="window.open(&quot;https://github.com/crystal-linux&quot;);">GitHub</button>
                 </div>
             <div class="card-group" style="margin-top: 100px;filter: drop-shadow(0px 0px 10px rgba(45, 45, 46, 0.2));">
